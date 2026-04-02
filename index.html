@@ -4,38 +4,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KEEP — Horizon Roadmap</title>
+<title>KEEP: Horizon Roadmap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  /* chrome (topbar + statsbar) — stays dark */
-  --bg:  #1e2929;
-  --bg2: #1e2929;
-  --bg3: #253030;
+  /* KEEP brand palette */
+  --midnight:    #0A0F1C;
+  --deep-navy:   #060B17;
+  --signal-teal: #0E7480;
+  --teal-glow:   #81D3E0;
+  --teal-pale:   #E0F7FA;
+  --cream:       #FAFAF8;
 
-  /* main content area — warm light */
-  --main-bg:   #f0ebe4;
-  --main-bg2:  #e8e2db;
-  --main-bg3:  #ede7e0;
+  /* chrome (topbar + statsbar) */
+  --bg:  #0A0F1C;
+  --bg2: #0A0F1C;
+  --bg3: #0d1526;
 
-  --teal: #486160; --tl: #3d7a76; --tl2: #2e5e5b;
-  --bdr:  rgba(72,97,96,0.15); --bdr2: rgba(72,97,96,0.3);
+  /* main content area */
+  --main-bg:  #f0ebe4;
+  --main-bg2: #e8e2db;
+  --main-bg3: #ede7e0;
 
-  --now: #3d7a76; --next: #6b7a3a; --later: #5a6a8a;
-  --complete: #3a5e3a; --suggest: #6a5a7a;
+  --teal: #0E7480;
+  --tl:   #0E7480;
+  --tl2:  #0a5f6a;
+
+  --bdr:  rgba(14,116,128,0.12);
+  --bdr2: rgba(14,116,128,0.25);
 
   /* text on light bg */
-  --tx:  #1a2828; --txm: #486160; --txd: #7a9896;
+  --tx:  #1a2828;
+  --txm: #0E7480;
+  --txd: rgba(14,116,128,0.5);
 
   /* text on dark chrome */
-  --ctx:  #d8e8e7; --ctxm: #7aa8a5; --ctxd: #4a7270;
+  --ctx:  #FAFAF8;
+  --ctxm: rgba(129,211,224,0.7);
+  --ctxd: rgba(129,211,224,0.35);
 
-  --rbg: rgba(72,97,96,0.04); --rhv: rgba(72,97,96,0.07);
-  --bnow:   rgba(61,122,118,0.1);
-  --bnext:  rgba(107,122,58,0.1);
-  --blater: rgba(90,106,138,0.1);
+  --rbg: rgba(14,116,128,0.03);
+  --rhv: rgba(14,116,128,0.06);
+
   --crit: #c04040; --high: #a07828;
 }
 html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; line-height: 1.5; }
@@ -48,16 +60,16 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 }
 .setup-card {
   width: 100%; max-width: 580px;
-  background: #1e2929; border: 0.5px solid rgba(110,158,155,0.35);
-  border-radius: 12px; padding: 32px 36px;
+  background: #0A0F1C; border: 0.5px solid rgba(129,211,224,0.2);
+  border-radius: 2px; padding: 32px 36px;
   max-height: 90vh; overflow-y: auto;
 }
-.setup-logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: var(--tl); letter-spacing: 0.05em; margin-bottom: 6px; }
+.setup-logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #81D3E0; letter-spacing: 0.05em; margin-bottom: 6px; }
 .setup-title { font-size: 14px; color: var(--txm); margin-bottom: 28px; letter-spacing: 0.02em; }
 .setup-steps { display: flex; flex-direction: column; gap: 20px; margin-bottom: 28px; }
 .setup-step { display: flex; gap: 14px; align-items: flex-start; }
 .step-num {
-  width: 22px; height: 22px; border-radius: 50%; background: rgba(110,158,155,0.15);
+  width: 22px; height: 22px; border-radius: 50%; background: rgba(129,211,224,0.1);
   border: 0.5px solid var(--bdr2); display: flex; align-items: center; justify-content: center;
   font-size: 10px; color: var(--tl); flex-shrink: 0; margin-top: 1px;
 }
@@ -65,23 +77,23 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .step-label { font-size: 12px; color: var(--tx); margin-bottom: 4px; font-weight: 500; }
 .step-desc { font-size: 11px; color: var(--txm); line-height: 1.6; }
 .step-desc a { color: var(--tl); text-decoration: none; }
-.step-desc code { background: rgba(110,158,155,0.12); padding: 1px 5px; border-radius: 3px; font-size: 10px; font-family: monospace; color: var(--tl); }
+.step-desc code { background: rgba(129,211,224,0.1); padding: 1px 5px; border-radius: 2px; font-size: 10px; font-family: monospace; color: #81D3E0; }
 .setup-fields { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
 .setup-field label { display: block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--txd); margin-bottom: 5px; }
 .setup-field input {
-  width: 100%; background: rgba(0,0,0,0.2); border: 0.5px solid var(--bdr2);
-  border-radius: 6px; padding: 10px 12px; font-size: 12px; color: var(--tx);
+  width: 100%; background: rgba(255,255,255,0.06); border: 0.5px solid var(--bdr2);
+  border-radius: 2px; padding: 10px 12px; font-size: 12px; color: #FAFAF8;
   font-family: inherit; outline: none; transition: border-color 0.12s;
 }
 .setup-field input:focus { border-color: var(--tl); }
 .setup-field input::placeholder { color: var(--txd); }
 .setup-connect {
-  width: 100%; padding: 11px; border-radius: 8px; font-size: 13px;
-  cursor: pointer; border: none; background: var(--teal);
-  color: var(--tx); font-family: inherit; letter-spacing: 0.04em;
-  transition: background 0.12s;
+  width: 100%; padding: 11px; border-radius: 2px; font-size: 13px;
+  cursor: pointer; border: none; background: linear-gradient(135deg, #81D3E0, #0E7480);
+  color: #FFFFFF; font-family: inherit; letter-spacing: 0.04em; font-weight: 600;
+  transition: opacity 0.12s;
 }
-.setup-connect:hover { background: var(--tl2); }
+.setup-connect:hover { opacity: 0.88; }
 .setup-connect:disabled { opacity: 0.5; cursor: default; }
 .setup-error { font-size: 11px; color: var(--crit); margin-top: 10px; display: none; }
 .setup-note { font-size: 10px; color: var(--txd); margin-top: 14px; line-height: 1.6; }
@@ -89,7 +101,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .sql-block {
   margin-top: 8px; position: relative; cursor: pointer;
   background: rgba(0,0,0,0.25); border: 0.5px solid var(--bdr2);
-  border-radius: 6px; padding: 12px 14px;
+  border-radius: 2px; padding: 12px 14px;
   transition: border-color 0.12s;
 }
 .sql-block:hover { border-color: var(--tl); }
@@ -110,7 +122,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .topbar {
   flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;
   padding: 0 28px; height: 56px; background: var(--bg);
-  border-bottom: 0.5px solid rgba(110,158,155,0.25); gap: 16px;
+  border-bottom: 0.5px solid rgba(129,211,224,0.12); gap: 16px;
 }
 .topbar-left { display: flex; align-items: center; gap: 20px; }
 .wordmark { font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #81D3E0; letter-spacing: 0.05em; }
@@ -126,7 +138,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .fpill {
   padding: 5px 13px; border-radius: 20px; font-size: 11px; cursor: pointer;
   border: 0.5px solid rgba(129,211,224,0.3); color: rgba(129,211,224,0.7); background: transparent;
-  transition: all 0.12s; letter-spacing: 0.05em; font-family: inherit;
+  transition: all 0.12s; letter-spacing: 0.05em; font-family: inherit; font-weight: 600; text-transform: uppercase;
 }
 .fpill:hover { border-color: #81D3E0; color: #81D3E0; }
 .fpill.on-all      { background: rgba(129,211,224,0.12); border-color: #81D3E0; color: #81D3E0; }
@@ -140,7 +152,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   padding: 5px 14px; border-radius: 20px; font-size: 11px; cursor: pointer;
   border: 0.5px solid rgba(129,211,224,0.5); color: #81D3E0;
   background: rgba(129,211,224,0.1); transition: all 0.12s;
-  letter-spacing: 0.05em; font-family: inherit; margin-left: 8px;
+  letter-spacing: 0.05em; font-family: inherit; font-weight: 600; margin-left: 8px;
 }
 .addbtn:hover { background: rgba(129,211,224,0.18); border-color: #81D3E0; }
 
@@ -177,8 +189,8 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 
 .rwrap { position: relative; }
 .rwrap.dragging { opacity: 0.3; }
-.rwrap.dov-a::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--tl); z-index:30; border-radius:1px; }
-.rwrap.dov-b::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--tl); z-index:30; border-radius:1px; }
+.rwrap.dov-a::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:#0E7480; z-index:30; border-radius:1px; }
+.rwrap.dov-b::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:#0E7480; z-index:30; border-radius:1px; }
 
 .row {
   display: grid;
@@ -202,7 +214,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .cell select { cursor:pointer; appearance:none; -webkit-appearance:none; }
 .cell select option { background: #f0ebe4; color: #1a2828; }
 .cell input:focus, .cell select:focus, .cell textarea:focus {
-  background: rgba(110,158,155,0.08); border-radius:3px;
+  background: rgba(14,116,128,0.06); border-radius:2px;
   box-shadow: 0 0 0 1px var(--tl2); padding: 2px 4px;
 }
 
@@ -210,14 +222,14 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .exptgl {
   cursor:pointer; font-size:10px; color:var(--txm); user-select:none;
   padding:4px 9px; transition:all 0.12s; line-height:1;
-  background:rgba(110,158,155,0.08); border:0.5px solid var(--bdr);
-  border-radius:20px; font-family:inherit; letter-spacing:0.04em; white-space:nowrap;
+  background:rgba(14,116,128,0.06); border:0.5px solid var(--bdr);
+  border-radius:20px; font-family:inherit; letter-spacing:0.06em; white-space:nowrap; font-weight:600; text-transform:uppercase;
 }
-.exptgl:hover { color:var(--tl); border-color:var(--tl); background:rgba(110,158,155,0.14); }
+.exptgl:hover { color:var(--tl); border-color:var(--tl); background:rgba(14,116,128,0.1); }
 .delbtn {
   width:22px; height:22px; display:flex; align-items:center; justify-content:center;
   cursor:pointer; color:var(--txd); border:none; background:transparent;
-  font-size:12px; opacity:0; transition:opacity 0.12s, color 0.12s; border-radius:3px; font-family:inherit;
+  font-size:12px; opacity:0; transition:opacity 0.12s, color 0.12s; border-radius:2px; font-family:inherit;
 }
 .row:hover .delbtn { opacity:1; }
 .delbtn:hover { color:#e26060; }
@@ -234,23 +246,23 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   font-family:inherit; transition:color 0.12s, border-color 0.12s;
 }
 .exp-tab:hover { color:var(--txm); }
-.exp-tab.active { color:var(--tl); border-bottom-color:var(--tl); }
+.exp-tab.active { color:#0E7480; border-bottom-color:#0E7480; }
 .exp-pane { display:none; }
 .exp-pane.active { display:block; }
 
 .expgrid { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; padding:10px 34px 14px; }
 .expfield { display:flex; flex-direction:column; gap:4px; }
-.explbl { font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--txd); }
+.explbl { font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#1a2828; font-weight:600; }
 .exptxa {
-  background: rgba(255,255,255,0.5); border:0.5px solid var(--bdr);
-  border-radius:4px; padding:7px 8px; font-size:11px; color:var(--tx);
+  background: rgba(255,255,255,0.45); border:0.5px solid var(--bdr);
+  border-radius:2px; padding:7px 8px; font-size:11px; color:var(--tx);
   font-family:'DM Sans', system-ui, sans-serif; resize:vertical; min-height:72px;
   outline:none; width:100%; line-height:1.55;
 }
 .exptxa:focus { border-color:var(--tl2); box-shadow:0 0 0 1px var(--tl2); }
 .expinp {
-  background: rgba(255,255,255,0.5); border:0.5px solid var(--bdr);
-  border-radius:4px; padding:6px 8px; font-size:11px; color:var(--tx);
+  background: rgba(255,255,255,0.45); border:0.5px solid var(--bdr);
+  border-radius:2px; padding:6px 8px; font-size:11px; color:var(--tx);
   font-family:'DM Sans', system-ui, sans-serif; outline:none; width:100%;
 }
 .expinp:focus { border-color:var(--tl2); }
@@ -259,11 +271,11 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 /* job stories */
 .jobs-wrap { padding:10px 34px 14px; display:flex; flex-direction:column; gap:10px; }
 .job-card {
-  background: rgba(255,255,255,0.5); border:0.5px solid var(--bdr);
-  border-radius:4px; padding:10px 12px; display:grid;
+  background: rgba(255,255,255,0.45); border:0.5px solid var(--bdr);
+  border-radius:2px; padding:10px 12px; display:grid;
   grid-template-columns:80px 1fr; gap:6px 10px; align-items:start; position:relative;
 }
-.job-lbl { font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--txd); padding-top:6px; }
+.job-lbl { font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#1a2828; font-weight:600; padding-top:6px; }
 .job-inp {
   background:transparent; border:none; border-bottom:0.5px solid var(--bdr);
   outline:none; font-family:inherit; font-size:11px; color:var(--tx);
@@ -281,7 +293,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .add-job-btn {
   align-self:flex-start; padding:4px 12px; border-radius:20px; font-size:10px;
   cursor:pointer; border:0.5px solid var(--bdr); color:var(--txm);
-  background:transparent; font-family:inherit; letter-spacing:0.05em; transition:all 0.12s;
+  background:transparent; font-family:inherit; letter-spacing:0.06em; transition:all 0.12s; font-weight:600; text-transform:uppercase;
 }
 .add-job-btn:hover { border-color:var(--tl); color:var(--tl); }
 
@@ -297,20 +309,20 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   animation:spin 0.8s linear infinite;
 }
 @keyframes spin { to { transform:rotate(360deg); } }
-.loading-text { font-size:11px; color:var(--teal); letter-spacing:0.08em; }
+.loading-text { font-size:11px; color:#0E7480; letter-spacing:0.08em; }
 
 /* stats */
 .statsbar {
   display:flex; gap:24px; padding:14px 28px;
-  border-top:0.5px solid rgba(110,158,155,0.2); background:var(--bg);
+  border-top:0.5px solid rgba(129,211,224,0.1); background:var(--bg);
   font-size:10px; color:var(--ctxm); letter-spacing:0.06em; flex-shrink:0;
 }
 .sv { font-size:20px; color:var(--ctx); font-weight:400; display:block; line-height:1.2; font-family:'DM Serif Display', Georgia, serif; }
 
 .disconnect-btn {
   margin-left:auto; padding:4px 11px; border-radius:20px; font-size:10px;
-  cursor:pointer; border:0.5px solid rgba(110,158,155,0.25); color:var(--ctxd);
-  background:transparent; font-family:inherit; letter-spacing:0.05em; transition:all 0.12s;
+  cursor:pointer; border:0.5px solid rgba(129,211,224,0.2); color:var(--ctxd);
+  background:transparent; font-family:inherit; letter-spacing:0.06em; transition:all 0.12s; font-weight:600; text-transform:uppercase;
 }
 .disconnect-btn:hover { border-color:#e26060; color:#e26060; }
 </style>
@@ -327,21 +339,21 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 <div class="setup-overlay" id="setup" style="display:none">
   <div class="setup-card">
     <div class="setup-logo">KEEP</div>
-    <div class="setup-title">Horizon Roadmap — First time setup</div>
+    <div class="setup-title">Horizon Roadmap: First time setup</div>
 
     <div class="setup-steps">
       <div class="setup-step">
         <div class="step-num">1</div>
         <div class="step-body">
           <div class="step-label">Create a free Supabase project</div>
-          <div class="step-desc">Go to <a href="https://supabase.com" target="_blank">supabase.com</a>, sign up free, and create a new project. Name it anything — e.g. <code>keep-roadmap</code>.</div>
+          <div class="step-desc">Go to <a href="https://supabase.com" target="_blank">supabase.com</a>, sign up free, and create a new project. Name it anything, e.g. <code>keep-roadmap</code>.</div>
         </div>
       </div>
       <div class="setup-step">
         <div class="step-num">2</div>
         <div class="step-body">
           <div class="step-label">Create the initiatives table</div>
-          <div class="step-desc">In Supabase go to <strong>SQL Editor</strong> and run this — click to copy:</div>
+          <div class="step-desc">In Supabase go to <strong>SQL Editor</strong> and run this. Click to copy:</div>
           <div class="sql-block" id="sql-block" onclick="copySql()" title="Click to copy">
             <div class="sql-copy-hint" id="sql-hint">Click to copy</div>
             <pre class="sql-pre">create table initiatives (
@@ -495,11 +507,11 @@ const SIZES = ['XS','S','M','L','XL','XXL'];
 const VALS  = ['$','$$','$$$','$$$$'];
 
 const HZ = [
-  { key:'now',      label:'Now',            dot:'#6e9e9b' },
-  { key:'next',     label:'Next',           dot:'#9ea86a' },
-  { key:'later',    label:'Later',          dot:'#7a8aaa' },
-  { key:'complete', label:'Complete',       dot:'#5a7a5a' },
-  { key:'suggest',  label:'Suggestion Box', dot:'#7a6a8a' },
+  { key:'now',      label:'Now',            dot:'#0E7480' },
+  { key:'next',     label:'Next',           dot:'#0E7480' },
+  { key:'later',    label:'Later',          dot:'#0E7480' },
+  { key:'complete', label:'Complete',       dot:'#0E7480' },
+  { key:'suggest',  label:'Suggestion Box', dot:'#0E7480' },
 ];
 
 // ── CONNECT ──
@@ -803,8 +815,8 @@ async function saveSortOrders() {
 }
 
 // ── HELPERS ──
-function priColor(p) { return p==='Critical'?'#d96060':p==='High'?'#c8a050':p==='Medium'?'#7aa8a5':'#4a7270'; }
-function valColor(v) { return v==='$'?'#4a7270':v==='$$'?'#7aa8a5':v==='$$$'?'#9ea86a':'#c8a050'; }
+function priColor(p) { return p==='Critical'?'#c04040':p==='High'?'#a07828':'#486160'; }
+function valColor(v) { return '#486160'; }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // ── RENDER ROW ──
@@ -819,8 +831,8 @@ function rRow(r) {
   <div class="row">
     <div class="dh">⠿</div>
     <div class="cell"><input class="title-input" type="text" value="${esc(r.title)}" placeholder="Initiative title…" oninput="upd('${r.id}','title',this.value)" /></div>
-    <div class="cell"><select onchange="upd('${r.id}','cat',this.value)">${CATS.map(c=>`<option value="${c}" ${r.cat===c?'selected':''}>${c||'— Category'}</option>`).join('')}</select></div>
-    <div class="cell"><select onchange="upd('${r.id}','area',this.value)">${AREAS.map(a=>`<option value="${a}" ${r.area===a?'selected':''}>${a||'— Area'}</option>`).join('')}</select></div>
+    <div class="cell"><select onchange="upd('${r.id}','cat',this.value)">${CATS.map(c=>`<option value="${c}" ${r.cat===c?'selected':''}>${c||'Category'}</option>`).join('')}</select></div>
+    <div class="cell"><select onchange="upd('${r.id}','area',this.value)">${AREAS.map(a=>`<option value="${a}" ${r.area===a?'selected':''}>${a||'Area'}</option>`).join('')}</select></div>
     <div class="cell"><select onchange="upd('${r.id}','priority',this.value)" style="color:${pc}">${PRIS.map(p=>`<option value="${p}" ${r.priority===p?'selected':''} style="color:${priColor(p)}">${p}</option>`).join('')}</select></div>
     <div class="cell" style="text-align:center"><select onchange="upd('${r.id}','size',this.value)" style="color:var(--txm);text-align:center;width:100%">${SIZES.map(s=>`<option value="${s}" ${r.size===s?'selected':''}>${s}</option>`).join('')}</select></div>
     <div class="cell" style="text-align:center"><select onchange="upd('${r.id}','value',this.value)" style="color:${vc};text-align:center;width:100%">${VALS.map(v=>`<option value="${v}" ${r.value===v?'selected':''}>${v}</option>`).join('')}</select></div>
@@ -908,14 +920,14 @@ function render() {
 
   document.getElementById('sb').innerHTML = `
     <div><span class="sv">${total}</span>total</div>
-    <div><span class="sv" style="color:#6e9e9b">${now}</span>now</div>
-    <div><span class="sv" style="color:#9ea86a">${next}</span>next</div>
-    <div><span class="sv" style="color:#7a8aaa">${later}</span>later</div>
-    <div><span class="sv" style="color:#5a7a5a">${complete}</span>complete</div>
-    <div><span class="sv" style="color:#7a6a8a">${suggest}</span>suggestions</div>
+    <div><span class="sv" style="color:#0E7480">${now}</span>now</div>
+    <div><span class="sv" style="color:#0E7480">${next}</span>next</div>
+    <div><span class="sv" style="color:#0E7480">${later}</span>later</div>
+    <div><span class="sv" style="color:#0E7480">${complete}</span>complete</div>
+    <div><span class="sv" style="color:#0E7480">${suggest}</span>suggestions</div>
     <div style="margin-left:auto;display:flex;gap:24px;align-items:center;">
-      <div><span class="sv" style="color:#d96060">${crit}</span>critical</div>
-      <div><span class="sv" style="color:#c8a050">${high}</span>high</div>
+      <div><span class="sv" style="color:#c04040">${crit}</span>critical</div>
+      <div><span class="sv" style="color:#a07828">${high}</span>high</div>
       <button class="disconnect-btn" onclick="disconnect()">Disconnect</button>
     </div>`;
 }
