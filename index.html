@@ -268,7 +268,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 /* loading */
 .loading-screen {
   position:fixed; inset:0; background:var(--main-bg);
-  display:flex; align-items:center; justify-content:center;
+  display:none; align-items:center; justify-content:center;
   z-index:999; flex-direction:column; gap:16px;
 }
 .loading-spinner {
@@ -366,7 +366,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 <body>
 
 <!-- LOADING -->
-<div class="loading-screen" id="loading">
+<div class="loading-screen" id="loading" style="display:none">
   <div class="loading-spinner"></div>
   <div class="loading-text">Connecting…</div>
 </div>
@@ -509,7 +509,7 @@ function showErr(msg) {
 // ── APP INIT ──
 async function startApp() {
   document.getElementById('loading').style.display = 'flex';
-  document.getElementById('setup').style.display = 'none';
+  document.getElementById('setup-screen').style.display = 'none';
   await loadRows();
   document.getElementById('loading').style.display = 'none';
   document.getElementById('app').style.display = 'flex';
