@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -849,7 +846,7 @@ function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;'
 // ── JIRA ──
 // Proxy URL — set this to your deployed Cloudflare Worker URL
 // e.g. https://keep-jira-proxy.your-subdomain.workers.dev
-const JIRA_PROXY = 'https://keep-jira-proxy.keeplabs.workers.dev';
+const JIRA_PROXY = 'keep-jira-proxy.chaz-cf6.workers.dev';
 
 async function fetchJiraTicket(id, ticketKey) {
   const r = rows.find(r => r.id === id);
