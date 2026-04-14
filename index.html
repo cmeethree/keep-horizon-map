@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,42 +19,42 @@
   --teal-glow:   #81D3E0;
   --teal-pale:   #E0F7FA;
   --cream:       #FAFAF8;
- 
+
   /* chrome (topbar + statsbar) */
   --bg:  #0A0F1C;
   --bg2: #0A0F1C;
   --bg3: #0d1526;
- 
+
   /* main content area */
   --main-bg:  #EDEDЕ4;
   --main-bg2: #E8F0F1;
   --main-bg3: #ede7e0;
   /* main bg alt: #f0ebe4; --main-bg2: #e8e2db; */
- 
+
   --teal: #0E7480;
   --tl:   #0E7480;
   --tl2:  #0a5f6a;
- 
+
   --bdr:  rgba(14,116,128,0.12);
   --bdr2: rgba(14,116,128,0.25);
- 
+
   /* text on light bg */
   --tx:  #1a2828;
   --txm: #0E7480;
   --txd: rgba(14,116,128,0.5);
- 
+
   /* text on dark chrome */
   --ctx:  #FAFAF8;
   --ctxm: rgba(129,211,224,0.7);
   --ctxd: rgba(129,211,224,0.35);
- 
+
   --rbg: rgba(14,116,128,0.03);
   --rhv: rgba(14,116,128,0.06);
- 
+
   --crit: #c04040; --high: #a07828;
 }
 html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; line-height: 1.5; }
- 
+
 /* ── SETUP SCREEN ── */
 .setup-overlay {
   position: fixed; inset: 0; background: var(--main-bg);
@@ -97,7 +100,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .setup-connect:disabled { opacity: 0.5; cursor: default; }
 .setup-error { font-size: 11px; color: var(--crit); margin-top: 10px; display: none; }
 .setup-note { font-size: 10px; color: var(--txd); margin-top: 14px; line-height: 1.6; }
- 
+
 .sql-block {
   margin-top: 8px; position: relative; cursor: pointer;
   background: rgba(0,0,0,0.25); border: 0.5px solid var(--bdr2);
@@ -115,10 +118,10 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   color: var(--txd); transition: color 0.12s;
 }
 .sql-block:hover .sql-copy-hint { color: var(--tl); }
- 
+
 /* ── LAYOUT ── */
 .shell { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
- 
+
 .topbar {
   flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;
   padding: 0 28px; height: 56px; background: var(--bg);
@@ -128,13 +131,13 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .wordmark { font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; color: #81D3E0; letter-spacing: 0.05em; }
 .subt { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #81D3E0; opacity: 0.7; padding-left: 16px; border-left: 0.5px solid rgba(129,211,224,0.3); }
 .topbar-right { display: flex; gap: 8px; align-items: center; }
- 
+
 /* save indicator */
 .save-status { font-size: 10px; letter-spacing: 0.06em; color: rgba(129,211,224,0.45); margin-right: 8px; transition: color 0.3s; }
 .save-status.saving { color: rgba(129,211,224,0.6); }
 .save-status.saved  { color: #81D3E0; }
 .save-status.error  { color: #e26060; }
- 
+
 .fpill {
   padding: 5px 13px; border-radius: 20px; font-size: 11px; cursor: pointer;
   border: 0.5px solid rgba(129,211,224,0.3); color: rgba(129,211,224,0.7); background: transparent;
@@ -147,7 +150,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .fpill.on-later    { background: rgba(129,211,224,0.15); border-color: #81D3E0; color: #81D3E0; }
 .fpill.on-complete { background: rgba(129,211,224,0.15); border-color: #81D3E0; color: #81D3E0; }
 .fpill.on-suggest  { background: rgba(129,211,224,0.15); border-color: #81D3E0; color: #81D3E0; }
- 
+
 .addbtn {
   padding: 5px 14px; border-radius: 20px; font-size: 11px; cursor: pointer;
   border: 0.5px solid rgba(129,211,224,0.5); color: #81D3E0;
@@ -155,10 +158,10 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   letter-spacing: 0.05em; font-family: inherit; font-weight: 600; margin-left: 8px;
 }
 .addbtn:hover { background: rgba(129,211,224,0.18); border-color: #81D3E0; }
- 
+
 .main { flex: 1; overflow-y: auto; overflow-x: auto; padding: 0 28px 40px; background: var(--main-bg); }
 .tbl-wrap { min-width: 960px; }
- 
+
 .col-heads {
   display: grid;
   grid-template-columns: 26px 2.4fr 88px 110px 80px 56px 64px 96px 80px;
@@ -168,7 +171,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   background: var(--main-bg); z-index: 1;
 }
 .ch { padding: 0 6px; }
- 
+
 .hz-hdr {
   display: flex; align-items: center; gap: 10px;
   padding: 20px 0 8px;
@@ -184,14 +187,14 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   font-family: inherit; letter-spacing: 0.05em; transition: all 0.12s;
 }
 .hz-add:hover { border-color: var(--tl); color: var(--tl); }
- 
+
 .empty-zone { padding: 14px 0; text-align: center; font-size: 11px; color: var(--txm); border-bottom: 0.5px solid var(--bdr); }
- 
+
 .rwrap { position: relative; }
 .rwrap.dragging { opacity: 0.3; }
 .rwrap.dov-a::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:#0E7480; z-index:30; border-radius:1px; }
 .rwrap.dov-b::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:#0E7480; z-index:30; border-radius:1px; }
- 
+
 .row {
   display: grid;
   grid-template-columns: 26px 2.4fr 88px 110px 80px 56px 64px 96px 80px;
@@ -200,10 +203,10 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   background: var(--main-bg); min-height: 44px; transition: background 0.1s;
 }
 .row:hover { background: var(--rhv); }
- 
+
 .dh { width:26px; display:flex; align-items:center; justify-content:center; cursor:grab; color:var(--txd); font-size:13px; user-select:none; }
 .dh:active { cursor:grabbing; }
- 
+
 .cell { padding: 5px 6px; min-width: 0; }
 .cell input, .cell select, .cell textarea {
   width:100%; background:transparent; border:none; outline:none;
@@ -217,7 +220,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   background: rgba(14,116,128,0.06); border-radius:2px;
   box-shadow: 0 0 0 1px var(--tl2); padding: 2px 4px;
 }
- 
+
 .row-actions { display:flex; align-items:center; gap:4px; padding:0 4px; }
 .exptgl {
   cursor:pointer; font-size:10px; color:var(--txm); user-select:none;
@@ -233,11 +236,11 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 }
 .row:hover .delbtn { opacity:1; }
 .delbtn:hover { color:#e26060; }
- 
+
 /* expand */
 .exprow { display:none; border-bottom:0.5px solid var(--bdr); background: var(--main-bg2); }
 .exprow.open { display:block; }
- 
+
 .exp-tabs { display:flex; gap:0; border-bottom:0.5px solid var(--bdr); padding:0 34px; }
 .exp-tab {
   padding:8px 14px; font-size:10px; letter-spacing:0.09em; text-transform:uppercase;
@@ -249,7 +252,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .exp-tab.active { color:#0E7480; border-bottom-color:#0E7480; }
 .exp-pane { display:none; }
 .exp-pane.active { display:block; }
- 
+
 .expgrid { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; padding:10px 34px 14px; }
 .expfield { display:flex; flex-direction:column; gap:4px; }
 .explbl { font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:#1a2828; font-weight:600; }
@@ -267,7 +270,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 }
 .expinp:focus { border-color:var(--tl2); }
 .expinp-link { color:var(--tl); }
- 
+
 /* job stories */
 .jobs-wrap { padding:10px 34px 14px; display:flex; flex-direction:column; gap:10px; }
 .job-card {
@@ -296,7 +299,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   background:transparent; font-family:inherit; letter-spacing:0.06em; transition:all 0.12s; font-weight:600; text-transform:uppercase;
 }
 .add-job-btn:hover { border-color:var(--tl); color:var(--tl); }
- 
+
 /* loading */
 .loading-screen {
   position:fixed; inset:0; background:var(--main-bg);
@@ -310,7 +313,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 }
 @keyframes spin { to { transform:rotate(360deg); } }
 .loading-text { font-size:11px; color:#0E7480; letter-spacing:0.08em; }
- 
+
 /* stats */
 .statsbar {
   display:flex; gap:24px; padding:14px 28px;
@@ -318,14 +321,14 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
   font-size:10px; color:var(--ctxm); letter-spacing:0.06em; flex-shrink:0;
 }
 .sv { font-size:20px; color:var(--ctx); font-weight:400; display:block; line-height:1.2; font-family:'DM Serif Display', Georgia, serif; }
- 
+
 .disconnect-btn {
   margin-left:auto; padding:4px 11px; border-radius:20px; font-size:10px;
   cursor:pointer; border:0.5px solid rgba(129,211,224,0.2); color:var(--ctxd);
   background:transparent; font-family:inherit; letter-spacing:0.06em; transition:all 0.12s; font-weight:600; text-transform:uppercase;
 }
 .disconnect-btn:hover { border-color:#e26060; color:#e26060; }
- 
+
 /* ── LOGIN SCREEN ── */
 .login-overlay {
   position: fixed; inset: 0; background: #0d1117;
@@ -367,7 +370,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 .login-btn:hover { background: #9de0ea; }
 .login-btn:disabled { opacity: 0.5; cursor: default; }
 .login-error { font-size: 11px; color: #e26060; margin-top: 12px; display: none; }
- 
+
 /* ── JIRA ── */
 .jira-field { display:flex; flex-direction:column; gap:6px; }
 .jira-input-row { display:flex; gap:6px; }
@@ -403,13 +406,13 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
 </style>
 </head>
 <body>
- 
+
 <!-- LOADING -->
 <div class="loading-screen" id="loading" style="display:none">
   <div class="loading-spinner"></div>
   <div class="loading-text">Connecting…</div>
 </div>
- 
+
 <!-- LOGIN -->
 <div class="login-overlay" id="setup">
   <div class="login-card">
@@ -428,7 +431,7 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
     <div class="login-error" id="login-error"></div>
   </div>
 </div>
- 
+
 <div class="shell" id="app" style="display:none">
   <div class="topbar">
     <div class="topbar-left">
@@ -446,21 +449,21 @@ html, body { height: 100%; background: var(--main-bg); color: var(--tx); font-fa
       <button class="addbtn" onclick="addRow(null)">+ Add initiative</button>
     </div>
   </div>
- 
+
   <div class="main" id="main">
     <div class="tbl-wrap" id="root"></div>
   </div>
- 
+
   <div class="statsbar" id="sb">
     <button class="disconnect-btn" onclick="disconnect()">Disconnect</button>
   </div>
 </div>
- 
+
 <script>
 // ── CONFIG ──
 let API_URL = '';
 let API_KEY = '';
- 
+
 // ── PLAIN FETCH HELPERS (no SDK) ──
 async function dbFetch(path, method='GET', body=null) {
   const opts = {
@@ -481,19 +484,19 @@ async function dbFetch(path, method='GET', body=null) {
   const text = await res.text();
   return text ? JSON.parse(text) : null;
 }
- 
+
 async function dbSelect(table, order='sort_order') {
   return dbFetch(`${table}?order=${order}.asc&limit=500`);
 }
- 
+
 async function dbInsert(table, row) {
   return dbFetch(table, 'POST', row);
 }
- 
+
 async function dbUpdate(table, id, patch) {
   return dbFetch(`${table}?id=eq.${id}`, 'PATCH', patch);
 }
- 
+
 async function dbDelete(table, id) {
   const opts = {
     method: 'DELETE',
@@ -506,12 +509,12 @@ async function dbDelete(table, id) {
   const res = await fetch(API_URL + '/rest/v1/' + table + '?id=eq.' + id, opts);
   if (!res.ok) throw new Error(res.statusText);
 }
- 
+
 async function testConnection() {
   const data = await dbFetch('initiatives?limit=1');
   return Array.isArray(data);
 }
- 
+
 // ── STATE ──
 let filter = 'all';
 let rows = [];
@@ -519,13 +522,13 @@ let nextSortOrder = 1000;
 let dragSrc = null, dragOver = null, dragPos = null;
 let saveTimer = null;
 let pollTimer = null;
- 
+
 const CATS  = ['KAI','Analytics','KEEP Cold','Experience (CX)','Operations','Engineering',''];
 const AREAS = ['Product','Engineering','Experience (CX)','Operations',''];
 const PRIS  = ['Critical','High','Medium','Low'];
 const SIZES = ['XS','S','M','L','XL','XXL'];
 const VALS  = ['$','$$','$$$','$$$$'];
- 
+
 const HZ = [
   { key:'now',      label:'Now',            dot:'#0E7480' },
   { key:'next',     label:'Next',           dot:'#0E7480' },
@@ -533,23 +536,23 @@ const HZ = [
   { key:'complete', label:'Complete',       dot:'#0E7480' },
   { key:'suggest',  label:'Suggestion Box', dot:'#0E7480' },
 ];
- 
+
 // ── CONNECT ──
 async function connect() {
   const url = document.getElementById('sb-url').value.trim().replace(/\/$/, '');
   const key = document.getElementById('sb-key').value.trim();
   const btn = document.getElementById('connect-btn');
- 
+
   if (!url || !key) { showErr('Please fill in both fields.'); return; }
   if (!url.startsWith('https://')) { showErr('URL should start with https://'); return; }
- 
+
   btn.disabled = true;
   btn.textContent = 'Connecting…';
   document.getElementById('setup-error').style.display = 'none';
- 
+
   API_URL = url;
   API_KEY = key;
- 
+
   try {
     await testConnection();
     localStorage.setItem(CREDS_KEY, JSON.stringify({ url, key }));
@@ -561,19 +564,19 @@ async function connect() {
     showErr('Could not connect: ' + (e.message || 'Check your URL and key, and make sure the table was created.'));
   }
 }
- 
+
 function showErr(msg) {
   const el = document.getElementById('setup-error');
   el.textContent = msg;
   el.style.display = 'block';
 }
- 
+
 function disconnect() {
   if (!confirm('Disconnect and clear saved credentials?')) return;
   localStorage.removeItem(CREDS_KEY);
   location.reload();
 }
- 
+
 // ── APP INIT ──
 async function startApp() {
   document.getElementById('loading').style.display = 'flex';
@@ -584,7 +587,7 @@ async function startApp() {
   render();
   startPolling();
 }
- 
+
 async function loadRows() {
   const data = await dbSelect('initiatives');
   rows = (data || []).map(r => ({
@@ -601,21 +604,21 @@ async function loadRows() {
     nextSortOrder = Math.max(...rows.map(r => r.sort_order || 0)) + 10;
   }
 }
- 
+
 // ── POLLING (replaces realtime) ──
 let userIsActive = false;
 let activityTimer = null;
- 
+
 function markActive() {
   userIsActive = true;
   if (activityTimer) clearTimeout(activityTimer);
   activityTimer = setTimeout(() => { userIsActive = false; }, 3000);
 }
- 
+
 document.addEventListener('keydown', markActive);
 document.addEventListener('mousedown', markActive);
 document.addEventListener('focus', markActive, true);
- 
+
 function startPolling() {
   pollTimer = setInterval(async () => {
     // never re-render while user is typing or interacting
@@ -651,14 +654,14 @@ function startPolling() {
     } catch(e) { /* silent */ }
   }, 5000);
 }
- 
+
 // ── SAVE STATUS ──
 function setSaveStatus(state, msg) {
   const el = document.getElementById('save-status');
   el.className = 'save-status ' + state;
   el.textContent = msg;
 }
- 
+
 // ── SAVE ROW ──
 async function saveRow(id) {
   const r = rows.find(r => r.id === id);
@@ -678,12 +681,12 @@ async function saveRow(id) {
     console.error('Save error:', e);
   }
 }
- 
+
 function debounceSave(id) {
   if (saveTimer) clearTimeout(saveTimer);
   saveTimer = setTimeout(() => saveRow(id), 800);
 }
- 
+
 // ── FILTER ──
 function setFilter(f) {
   filter = f;
@@ -695,7 +698,7 @@ function setFilter(f) {
   });
   render();
 }
- 
+
 // ── CRUD ──
 async function addRow(sprint) {
   const s = sprint || (filter !== 'all' ? filter : 'now');
@@ -719,7 +722,7 @@ async function addRow(sprint) {
     console.error(e);
   }
 }
- 
+
 async function del(id) {
   rows = rows.filter(r => r.id !== id);
   render();
@@ -733,7 +736,7 @@ async function del(id) {
     console.error(e);
   }
 }
- 
+
 function upd(id, f, v) {
   const r = rows.find(r => r.id === id);
   if (!r) return;
@@ -741,19 +744,19 @@ function upd(id, f, v) {
   if (f === 'sprint') { render(); saveRow(id); }
   else debounceSave(id);
 }
- 
+
 function tog(id) {
   const r = rows.find(r => r.id === id);
   if (r) r.expanded = !r.expanded;
   render();
 }
- 
+
 function setTab(id, tab) {
   const r = rows.find(r => r.id === id);
   if (r) r.activeTab = tab;
   render();
 }
- 
+
 function addJob(id) {
   const r = rows.find(r => r.id === id);
   if (!r) return;
@@ -762,7 +765,7 @@ function addJob(id) {
   render();
   debounceSave(id);
 }
- 
+
 function delJob(id, ji) {
   const r = rows.find(r => r.id === id);
   if (!r || !r.jobs) return;
@@ -770,14 +773,14 @@ function delJob(id, ji) {
   render();
   debounceSave(id);
 }
- 
+
 function updJob(id, ji, field, value) {
   const r = rows.find(r => r.id === id);
   if (!r || !r.jobs || !r.jobs[ji]) return;
   r.jobs[ji][field] = value;
   debounceSave(id);
 }
- 
+
 // ── DRAG ──
 function dstart(e, id) {
   dragSrc = id; e.dataTransfer.effectAllowed = 'move';
@@ -837,17 +840,17 @@ async function saveSortOrders() {
     setTimeout(() => setSaveStatus('', ''), 2000);
   } catch(e) { setSaveStatus('error', 'Save failed'); }
 }
- 
+
 // ── HELPERS ──
 function priColor(p) { return p==='Critical'?'#c04040':p==='High'?'#a07828':'#486160'; }
 function valColor(v) { return '#486160'; }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
- 
+
 // ── JIRA ──
 // Proxy URL — set this to your deployed Cloudflare Worker URL
 // e.g. https://keep-jira-proxy.your-subdomain.workers.dev
-const JIRA_PROXY = 'keep-jira-proxy.chaz-cf6.workers.dev';
- 
+const JIRA_PROXY = 'https://keep-jira-proxy.keeplabs.workers.dev';
+
 async function fetchJiraTicket(id, ticketKey) {
   const r = rows.find(r => r.id === id);
   if (!r) return;
@@ -869,14 +872,14 @@ async function fetchJiraTicket(id, ticketKey) {
     render();
   }
 }
- 
+
 function jiraStatusClass(cat) {
   if (cat === 'new') return 'jira-status-todo';
   if (cat === 'indeterminate') return 'jira-status-progress';
   if (cat === 'done') return 'jira-status-done';
   return 'jira-status-other';
 }
- 
+
 function renderJiraCard(r) {
   if (!r.jiraData) return '';
   if (r.jiraData.error) return '<div class="jira-error">Could not load: ' + esc(r.jiraData.error) + '</div>';
@@ -890,7 +893,7 @@ function renderJiraCard(r) {
     '<span class="jira-status ' + sc + '">' + esc(r.jiraData.status) + '</span>' +
   '</div>';
 }
- 
+
 // ── RENDER ROW ──
 function rRow(r) {
   const pc = priColor(r.priority), vc = valColor(r.value), tab = r.activeTab||'context';
@@ -937,11 +940,11 @@ function rRow(r) {
           <div class="expfield jira-field">
             <label class="explbl">Jira Ticket</label>
             <div class="jira-input-row">
-              <input class="expinp" type="text" value="${esc(r.jira_ticket||'')}" placeholder="e.g. KAI-42"
+              <input class="expinp" id="jira-input-${r.id}" type="text" value="${esc(r.jira_ticket||'')}" placeholder="e.g. KAI-42"
                 oninput="upd('${r.id}','jira_ticket',this.value)"
                 onkeydown="if(event.key==='Enter') fetchJiraTicket('${r.id}',this.value)" />
               <button class="jira-lookup-btn" id="jira-btn-${r.id}"
-                onclick="fetchJiraTicket('${r.id}', document.querySelector('[data-rid=\'${r.id}\'] .jira-input-row input').value)">Look up</button>
+                onclick="fetchJiraTicket('${r.id}', document.getElementById('jira-input-${r.id}').value)">Look up</button>
             </div>
             ${renderJiraCard(r)}
           </div>
@@ -965,7 +968,7 @@ function rRow(r) {
   </div>
 </div>`;
 }
- 
+
 // ── RENDER ──
 function render() {
   const root = document.getElementById('root');
@@ -995,12 +998,12 @@ function render() {
 </div>`;
   });
   root.innerHTML = html;
- 
+
   const total=rows.length, now=rows.filter(r=>r.sprint==='now').length,
     next=rows.filter(r=>r.sprint==='next').length, later=rows.filter(r=>r.sprint==='later').length,
     complete=rows.filter(r=>r.sprint==='complete').length, suggest=rows.filter(r=>r.sprint==='suggest').length,
     crit=rows.filter(r=>r.priority==='Critical').length, high=rows.filter(r=>r.priority==='High').length;
- 
+
   document.getElementById('sb').innerHTML = `
     <div><span class="sv">${total}</span>total</div>
     <div><span class="sv" style="color:#0E7480">${now}</span>now</div>
@@ -1014,7 +1017,7 @@ function render() {
       <button class="disconnect-btn" onclick="disconnect()">Disconnect</button>
     </div>`;
 }
- 
+
 // ── COPY SQL ──
 function copySql() {
   const sql = document.querySelector('.sql-pre').textContent;
@@ -1025,23 +1028,23 @@ function copySql() {
     setTimeout(() => { hint.textContent = 'Click to copy'; hint.style.color = ''; }, 2000);
   });
 }
- 
+
 // ── AUTH ──
 const CREDS_KEY = 'keep_horizon_creds';
- 
+
 async function doConnect() {
   const url = document.getElementById('sb-url').value.trim().replace(/\/$/, '');
   const key = document.getElementById('sb-key').value.trim();
   const btn = document.getElementById('connect-btn');
   const err = document.getElementById('login-error');
- 
+
   if (!url || !key) { showLoginErr('Please fill in both fields.'); return; }
   if (!url.startsWith('https://')) { showLoginErr('URL should start with https://'); return; }
- 
+
   btn.disabled = true; btn.textContent = 'Connecting…';
   err.style.display = 'none';
   API_URL = url; API_KEY = key;
- 
+
   try {
     await dbFetch('initiatives?limit=1');
     localStorage.setItem(CREDS_KEY, JSON.stringify({ url, key }));
@@ -1052,12 +1055,12 @@ async function doConnect() {
     showLoginErr('Could not connect. Check your URL and key.');
   }
 }
- 
+
 function showLoginErr(msg) {
   const el = document.getElementById('login-error');
   el.textContent = msg; el.style.display = 'block';
 }
- 
+
 // ── BOOT ──
 (async function boot() {
   const saved = localStorage.getItem(CREDS_KEY);
